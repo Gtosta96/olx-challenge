@@ -17,13 +17,15 @@ describe('::Component -> components/showcase/ShowcaseContainer.tsx::', () => {
     expect(component).toBeDefined();
   });
 
-  // FIXME
-  // REF: https://github.com/airbnb/enzyme/issues/944
-  it.skip('getData function should be called on ComponentDidMount', () => {
-    const cdmSpy = jest.spyOn(component.instance(), 'componentDidMount');
-    const getDataSpy = jest.spyOn(ShowcaseContainer.prototype, 'getData');
+  it('getData function should be called on ComponentDidMount', () => {
+    component = Enzyme.shallow(<ShowcaseContainer history={null} />, { disableLifecycleMethods: true });
+    const instance = component.instance();
 
-    expect(cdmSpy).toHaveBeenCalled();
+    // class-arrow-function
+    /* tslint:disable-next-line */
+    const getDataSpy = jest.spyOn(instance, 'getData');
+
+    instance.componentDidMount();
     expect(getDataSpy).toHaveBeenCalled();
   });
 

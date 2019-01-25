@@ -17,11 +17,15 @@ describe('::Component -> components/table/ProductContainer.tsx::', () => {
     expect(component).toBeDefined();
   });
 
-  it.skip('getData function should be called on ComponentDidMount', () => {
-    const cdmSpy = jest.spyOn(component.instance(), 'componentDidMount');
-    const getDataSpy = jest.spyOn(ProductContainer.prototype, 'getData');
+  it('getData function should be called on ComponentDidMount', () => {
+    component = Enzyme.shallow(<ProductContainer history={null} match={null} />, { disableLifecycleMethods: true });
+    const instance = component.instance();
 
-    expect(cdmSpy).toHaveBeenCalled();
+    // class-arrow-function
+    /* tslint:disable-next-line */
+    const getDataSpy = jest.spyOn(instance, 'getData');
+
+    instance.componentDidMount();
     expect(getDataSpy).toHaveBeenCalled();
   });
 

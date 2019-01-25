@@ -5,7 +5,8 @@ import { Container } from 'semantic-ui-react';
 import ProductContainer from './product/ProductContainer';
 import ShowcaseContainer from './showcase/ShowcaseContainer';
 
-const App = () => (
+// Exporting for testing purposes
+export const App = () => (
   <Container fluid>
     <Router>
       <Switch>

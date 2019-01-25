@@ -20,7 +20,6 @@ class ShowcaseContainer extends PureComponent<IProps, IState> {
   };
 
   componentDidMount() {
-    console.log(this.props);
     this.getData();
   }
 

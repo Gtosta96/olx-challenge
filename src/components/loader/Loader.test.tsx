@@ -1,7 +1,7 @@
 import Enzyme from 'enzyme';
 import React from 'react';
 
-import Loader from './Loader';
+import { Loader } from './Loader';
 
 describe('::Component -> components/loader/Loader.tsx::', () => {
   it('renders without crashing', () => {

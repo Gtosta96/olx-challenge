@@ -1,5 +1,3 @@
-import './Showcase.css';
-
 import React, { Fragment } from 'react';
 import { Card, Header, Image } from 'semantic-ui-react';
 
